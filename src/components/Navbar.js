@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   button: {
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(none),
   },
   image: {
     marginRight: "10px",
