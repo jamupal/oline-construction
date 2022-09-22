@@ -21,7 +21,7 @@ import { actionTypes } from "../reducer";
 
 //Cargamos la conexión hacia la plataforma. Conectamos nuestro stripe
 const stripePromise = loadStripe(
-  "pk_test_51HQ979HQf3hGzTFBvfhzZz0tjm98F05Nl3MeniSOU3nqBKUfCQqtAoyVChjQ49lJMitwoqYcB0YQslIThoGghKvv00bIKwKhZ5"
+  "pk_test_51LkgOXFRa7jGHwTAuvgjIWXTEo068ixqErr0Et31Cqf0GbxTgZhXlC36IqgKfJYctTNVjSmSN8MrgP2OiP3srr4b00V01RGT12"
 );
 
 const CARD_ELEMENT_OPTIONS = {
@@ -71,13 +71,10 @@ const CheckoutForm = ({ backStep, nextStep }) => {
           }
         );
         /* enviamos al backend, y la información que vamos a enviar al backend */
-        console.log(data); //lo que va a ir al backend
-        data.message = "Successful Payment";
+        console.log("data ",data); //lo que va a ir al backend
         dispatch({
           type: actionTypes.SET_PAYMENT_MESSAGE,
-          //paymentMessage: data.message,
           paymentMessage: data.message,
-
         });
         if (data.message === "Successful Payment") {
           dispatch({

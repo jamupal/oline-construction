@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, CssBaseline } from "@material-ui/core";
 import products from "../product-data";
 import Product from "../components/Product";
+import {db} from "../firebase";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Products = () => {
   const classes = useStyles();
+
+  const data = db.collection("Products").get().then((querySnapshot) =>{
+    querySnapshot.forEach((product) =>{
+      console.log(product);
+    })
+  })
 
   return (
     <>

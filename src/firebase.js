@@ -1,16 +1,18 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCKZ5Sp7JeIpI_KxlJ0hyxVoDqxi5y86Q",
-  authDomain: "test-rl4.firebaseapp.com",
-  projectId: "test-rl4",
-  storageBucket: "test-rl4.appspot.com",
-  messagingSenderId: "928359458039",
-  appId: "1:928359458039:web:0d4b0114688787e97b5ff2",
+  apiKey: "AIzaSyBTLkp0RzgDEAMo6Fe0GzLrXgkKkKvs9KM",
+  authDomain: "mypp-36e31.firebaseapp.com",
+  databaseURL: "https://mypp-36e31.firebaseio.com",
+  projectId: "mypp-36e31",
+  storageBucket: "mypp-36e31.appspot.com",
+  messagingSenderId: "224787608526",
+  appId: "1:224787608526:web:411eea95e11f5a2c5fb19f"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
+const db = firebase.firestore()
 
-export { auth };
+export {db, auth};
