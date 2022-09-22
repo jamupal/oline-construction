@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   button: {
-    marginLeft: theme.spacing(none),
+    marginLeft: theme.spacing(2),
   },
   image: {
     marginRight: "10px",
@@ -61,7 +61,7 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Hello {user ? user.email : "Guest"}
+              Hola {user ? user.email : "Invitado"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>

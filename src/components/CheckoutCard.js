@@ -50,11 +50,11 @@ const CheckoutCard = ({ product: { id, name, image, price, rating } }) => {
             variant='h5'
             color='textSecondary'
           >
-            {accounting.formatMoney(price, "€")}
+            {accounting.formatMoney(price, "$")}
           </Typography>
         }
         title={name}
-        subheader='in Stock'
+        subheader='En Stock'
       />
       <CardMedia className={classes.media} image={image} title={name} />
       <CardActions disableSpacing className={classes.cardActions}>

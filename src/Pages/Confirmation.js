@@ -12,13 +12,13 @@ const Confirmation = ({ message }) => {
         <br />
         <Typography variant='subtitle2' gutterBottom>
           {message === "Successful Payment"
-            ? "Your booking reference : Rgh8787878lkj"
+            ? "Su referencia de reserva : Rgh8787878lkj"
             : ""}
         </Typography>
       </div>
       <br />
       <Button component={Link} to='/' variant='outlined' type='button'>
-        Back to Home Page
+        Volver a la página de inicio
       </Button>
     </>
   );

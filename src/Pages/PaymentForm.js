@@ -72,9 +72,12 @@ const CheckoutForm = ({ backStep, nextStep }) => {
         );
         /* enviamos al backend, y la información que vamos a enviar al backend */
         console.log(data); //lo que va a ir al backend
+        data.message = "Successful Payment";
         dispatch({
           type: actionTypes.SET_PAYMENT_MESSAGE,
+          //paymentMessage: data.message,
           paymentMessage: data.message,
+
         });
         if (data.message === "Successful Payment") {
           dispatch({
@@ -106,7 +109,7 @@ const CheckoutForm = ({ backStep, nextStep }) => {
         }}
       >
         <Button onClick={backStep} variant='outlined'>
-          Back
+          atrás
         </Button>
         <Button
           type='submit'
@@ -117,7 +120,7 @@ const CheckoutForm = ({ backStep, nextStep }) => {
           {loading ? (
             <CircularProgress />
           ) : (
-            `Pay ${accounting.formatMoney(getBasketTotal(basket), "€")}`
+            `Pagar ${accounting.formatMoney(getBasketTotal(basket), "$")}`
           )}
         </Button>
       </div>
@@ -131,7 +134,7 @@ const PaymentForm = ({ backStep, nextStep }) => {
       <Review />
       <Divider />
       <Typography variant='h6' gutterBottom style={{ margin: "20px 0" }}>
-        Payment method
+        Metodos de pago
       </Typography>
       <Elements stripe={stripePromise}>
         {/* permite acceder al objeto Stripe desde sus hijos */}
