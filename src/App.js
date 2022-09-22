@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Politics from "./components/Politics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignIn from "./components/Signin";
 import SignUp from "./components/Signup";
@@ -11,6 +12,8 @@ import { actionTypes } from "./reducer";
 import Checkout from "./components/ProcessOrder/Checkout";
 import Products from "./Pages/Products";
 import CheckoutPage from "./Pages/CheckoutPage";
+
+
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -45,6 +48,9 @@ function App() {
           </Route>
           <Route path='/checkout-page'>
             <CheckoutPage />
+          </Route>
+          <Route path='/politics'>
+            <Politics />
           </Route>
           <Route path='/checkout'>
             <Checkout />
