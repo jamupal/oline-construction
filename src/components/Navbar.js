@@ -37,6 +37,7 @@ const Navbar = () => {
   const history = useHistory();
 
   const handleAuth = () => {
+    console.log("user",user)
     if (user) {
       auth.signOut();
       dispatch({
@@ -61,12 +62,12 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Hola {user ? user.email : "Invitado"}
+              Hola {user ? user.username : "usuario"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
                 <Button onClick={handleAuth} variant='outlined'>
-                  <strong>{user ? "Sign Out" : "Sign In"}</strong>
+                  <strong>{user ? "Sign Out" : "Entrar"}</strong>
                 </Button>
               </Link>
 
