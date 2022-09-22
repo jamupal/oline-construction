@@ -2,7 +2,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, CssBaseline } from "@material-ui/core";
 import products from "../product-data";
 import Product from "../components/Product";
-import {db} from "../firebase";
+import {getProduct} from "../firebase";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,12 +14,31 @@ const useStyles = makeStyles((theme) => ({
 
 const Products = () => {
   const classes = useStyles();
+  const getProducts =async () => {
+    try {
+      const querySnapshot = await getProduct();
+      querySnapshot.forEach(product =>{
+        console.log(product.data());
+      })
+    //console.log(querySnapshot.docs);
+    }catch (e) {
+      console.error(e);
+    }
+    
+  }
 
-  const data = db.collection("Products").get().then((querySnapshot) =>{
+   useEffect(() => {
+    getProducts()
+  }, []) 
+  
+
+  /* const data = db.collection("Products").get().then((querySnapshot) =>{
     querySnapshot.forEach((product) =>{
-      console.log(product);
+      console.log(product.data());
     })
-  })
+  }) */
+
+  //console.log(db);
 
   return (
     <>

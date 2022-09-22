@@ -59,6 +59,42 @@ const Navbar = () => {
                 <p>Online Construction</p>
               </IconButton>
             </Link>
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link href="/"  color="inherit">
+                Productos
+              </Link>
+            </Typography>
+            </div>
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link href="/"  color="inherit">
+                Inicio
+              </Link>
+            </Typography>
+            </div>
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link href="/"  color="inherit">
+                Categorías
+              </Link>
+            </Typography>
+            </div>
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link href="/"  color="inherit">
+                Información
+              </Link>
+            </Typography>
+            </div>
+
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link to="/politics"  color="inherit">
+                Politica de uso
+              </Link>
+            </Typography>
+            </div>
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>

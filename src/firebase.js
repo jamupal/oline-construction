@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import firebase from "firebase/compat/app";
+import {collection, doc, getDocs, getFirestore } from "firebase/firestore";
+import 'firebase/compat/auth'
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTLkp0RzgDEAMo6Fe0GzLrXgkKkKvs9KM",
@@ -13,6 +15,8 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
-const db = firebase.firestore()
+const db = getFirestore();
 
-export {db, auth};
+export {auth};
+
+export const getProduct = () => getDocs(collection(db, 'Products'));
