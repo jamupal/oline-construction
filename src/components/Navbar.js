@@ -107,7 +107,7 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Hola {user ? user.username : "usuario"}
+              Hola {user ? user.email : "usuario"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
