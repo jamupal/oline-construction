@@ -79,7 +79,7 @@ const products = [
     price: 529900,
     rating: 4,
     image:
-    
+
       "https://homecenterco.scene7.com/is/image/SodimacCO/455629_3?fmt=jpg&fit=fit,1&wid=420&hei=420",
     description:
     "Sanitario de una pieza moderno y ergonomico con Tecnología MaxiClean que permite mejor lavado de la taza reduciendo gérmenes y bacterias. Consumo de agua de sólo 4,6 litros por descarga.Capacidad de evacuación de sólidos (500 gr. de MISO).Altura familiar, uso tradicional.Moderno sistema de accionamiento con botón push ergonómico. Asiento cierre suave para mayor comodidad y amabilidad con el usuario.",
@@ -100,6 +100,7 @@ const products = [
     id: 9,
     name: "Lavadero",
     productType: "Lavadero 60 cm x 50 cm x 16 cm Granito",
+    category: 3,
     price: 184900,
     rating: 4,
     image:
@@ -111,6 +112,7 @@ const products = [
     id: 10,
     name: "Lavadero",
     productType: "Lavaderos 80 x 60 x 25 cm Granito Pulido",
+    category: 3,
     price: 262900,
     rating: 4,
     image:
@@ -122,6 +124,7 @@ const products = [
     id: 11,
     name: "Lavadero",
     productType: "Lavadero 60 cm x 50 cm x 12 cm Granito",
+    category: 3,
     price: 139900,
     rating: 4,
     image:
@@ -133,6 +136,7 @@ const products = [
     id: 12,
     name: "Lavadero",
     productType: "Lavadero 80 cm x 60 cm x 17 cm Granito",
+    category: 3,
     price: 214900,
     rating: 4,
     image:
@@ -144,6 +148,7 @@ const products = [
     id: 13,
     name: "Piso",
     productType: "Piso Laminado 8mm Roble Elton Ac4 Caja 1.99 M2",
+    category: 4,
     price: 98500,
     rating: 4,
     image:
@@ -155,6 +160,7 @@ const products = [
     id: 14,
     name: "Piso",
     productType: "Piso Laminado 8mm Oak Caja 2.12 m2",
+    category: 4,
     price: 103668,
     rating: 4,
     image:
@@ -166,6 +172,7 @@ const products = [
     id: 15,
     name: "Piso",
     productType: "Piso Laminado 7mm Oak Dark Brown Caja 2.24 m2",
+    category: 4,
     price: 107296,
     rating: 4,
     image:
@@ -177,6 +184,7 @@ const products = [
     id: 16,
     name: "Piso",
     productType: "Piso Laminado 8mm Oak Brown Caja 1.99 m2",
+    category: 4,
     price: 117211,
     rating: 4,
     image:
@@ -188,6 +196,7 @@ const products = [
     id: 17,
     name: "Taladro",
     productType: "Taladro Inalámbrico Rotación 3/8-pulg 20V I-L VVR Black+Decker",
+    category: 5,
     price: 209900,
     rating: 4,
     image:
@@ -199,6 +208,7 @@ const products = [
     id: 18,
     name: "Bauker",
     productType: "Kit Taladro Percutor 3/8-pulg 12V 1.3Ah I-L + 29 Accesorios Bauker",
+    category: 5,
     price: 199900,
     rating: 4,
     image:
@@ -210,6 +220,7 @@ const products = [
     id: 19,
     name: "Black + Decker",
     productType: "Taladro 1/2 Percutor 550W 2800 Rpm Vvr",
+    category: 5,
     price: 131900,
     rating: 4,
     image:
@@ -221,6 +232,7 @@ const products = [
     id: 20,
     name: "Bauker",
     productType: "Taladro Percutor 3/8-pulg 600 W 3000Rpm V.V.R. Bauker",
+    category: 5,
     price: 99900,
     rating: 4,
     image:
@@ -232,6 +244,7 @@ const products = [
     id: 21,
     name: "Redline",
     productType: "Mazo goma mango acero 8 onzas 15MAT5K",
+    category: 6,
     price: 19900,
     rating: 4,
     image:
@@ -243,6 +256,7 @@ const products = [
     id: 22,
     name: "Karson",
     productType: "Martillo una 13 onzas mango madera 1561331",
+    category: 6,
     price: 14900,
     rating: 4,
     image:
@@ -254,6 +268,7 @@ const products = [
     id: 23,
     name: "Redline",
     productType: "Martillo Stubby 8 Onzas",
+    category: 6,
     price: 18900,
     rating: 4,
     image:
@@ -265,6 +280,7 @@ const products = [
     id: 24,
     name: "Incolma",
     productType: "Almadana 4 libras con cabo 92330420",
+    category: 6,
     price: 72900,
     rating: 4,
     image:
@@ -276,6 +292,7 @@ const products = [
     id: 25,
     name: "Stanley",
     productType: "Alicate 8 Pulgadas Electricista Pro Ref 84-056LA",
+    category: 7,
     price: 43900,
     rating: 4,
     image:
@@ -287,6 +304,7 @@ const products = [
     id: 26,
     name: "Stanley",
     productType: "Hombresolo 10 Pulgadas Curvo Ref 84-369",
+    category: 7,
     price: 32900,
     rating: 4,
     image:
@@ -298,6 +316,7 @@ const products = [
     id: 27,
     name: "Ubermann",
     productType: "Alicate 6-pulg Corte Diagonal Ubermann",
+    category: 7,
     price: 34900,
     rating: 4,
     image:
@@ -309,6 +328,7 @@ const products = [
     id: 28,
     name: "Karson",
     productType: "Alicate 6 pulgadas punta larga cortante, Tornado Tools P036-10",
+    category: 7,
     price: 7500,
     rating: 4,
     image:
@@ -320,6 +340,7 @@ const products = [
     id: 29,
     name: "Stanley",
     productType: "Destornillador Tipo Ratchet + 10 Puntas",
+    category: 8,
     price: 61900,
     rating: 4,
     image:
@@ -331,6 +352,7 @@ const products = [
     id: 30,
     name: "Pretul",
     productType: "Destornillador Tipo Ratchet Con 6 Puntas Y 7Copas",
+    category: 8,
     price: 47900,
     rating: 4,
     image:
@@ -342,6 +364,7 @@ const products = [
     id: 31,
     name: "Truper",
     productType: "Destornillador Tipo Ratchet Con 18 Puntas 6Copas",
+    category: 8,
     price: 90900,
     rating: 4,
     image:
@@ -353,6 +376,7 @@ const products = [
     id: 32,
     name: "Pretul",
     productType: "Juego de 6 Destornilladores Mango Pvc",
+    category: 8,
     price: 42900,
     rating: 4,
     image:

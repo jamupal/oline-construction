@@ -60,6 +60,7 @@ const Navbar = () => {
   const history = useHistory();
 
   const handleAuth = () => {
+    console.log("user",user)
     if (user) {
       auth.signOut();
       dispatch({
@@ -106,7 +107,7 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Bienvenido {user ? user.email : ""}
+              Hola {user ? user.username : "usuario"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
