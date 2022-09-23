@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
+    
   },
   button: {
     marginLeft: theme.spacing(2),
@@ -29,6 +30,28 @@ const useStyles = makeStyles((theme) => ({
   image: {
     marginRight: "10px",
   },
+  link: {
+    textDecoration: "none",
+  },
+  firtsElement: {
+    marginLeft: "15rem",
+  },
+  secondElement: {
+    marginLeft: "5rem",
+    marginRight: "5rem"
+  },
+  textColor: {
+    fontWeight: 'bold',
+    color: 'rgb(247, 146, 26 )',
+  },
+    colorLink: {
+      color: '#000',
+      textDecoration: "none",
+    },
+  cart: {
+    color: 'rgb(247, 146, 26 )'
+  }
+  
 }));
 
 const Navbar = () => {
@@ -53,35 +76,21 @@ const Navbar = () => {
       <div className={classes.root}>
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
-            <Link to='/'>
-              <IconButton>
-                <p>Online Construction</p>
+            <Link className={classes.link} to='/'>
+              <IconButton className={classes.textColor}>
+                Online Construction
               </IconButton>
             </Link>
-            <div className={classes.grow}>
+            <div className={classes.firtsElement}>
               <Typography variant='h6' color='textPrimary' component='p'>
-              <Link href="/"  color="inherit">
+              <Link className={classes.colorLink} to="/products"  color="inherit">
                 Productos
               </Link>
             </Typography>
             </div>
-            <div className={classes.grow}>
+            <div className={classes.secondElement}>
               <Typography variant='h6' color='textPrimary' component='p'>
-              <Link href="/"  color="inherit">
-                Inicio
-              </Link>
-            </Typography>
-            </div>
-            <div className={classes.grow}>
-              <Typography variant='h6' color='textPrimary' component='p'>
-              <Link href="/"  color="inherit">
-                Categorías
-              </Link>
-            </Typography>
-            </div>
-            <div className={classes.grow}>
-              <Typography variant='h6' color='textPrimary' component='p'>
-              <Link href="/"  color="inherit">
+              <Link className={classes.colorLink} to="/information"  color="inherit">
                 Información
               </Link>
             </Typography>
@@ -89,7 +98,7 @@ const Navbar = () => {
 
             <div className={classes.grow}>
               <Typography variant='h6' color='textPrimary' component='p'>
-              <Link to="/politics"  color="inherit">
+              <Link className={classes.colorLink} to="/politics"  color="inherit">
                 Politica de uso
               </Link>
             </Typography>
@@ -97,19 +106,19 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Hola {user ? user.email : "Invitado"}
+              Bienvenido {user ? user.email : ""}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
                 <Button onClick={handleAuth} variant='outlined'>
-                  <strong>{user ? "Sign Out" : "Sign In"}</strong>
+                  <strong>{user ? "Salir" : "Entrar"}</strong>
                 </Button>
               </Link>
 
               <Link to='/checkout-page'>
                 <IconButton aria-label='show cart items' color='inherit'>
                   <Badge badgeContent={basket?.length} color='secondary'>
-                    <ShoppingCart fontSize='large' color='primary' />
+                    <ShoppingCart className={classes.cart} fontSize='large' />
                   </Badge>
                 </IconButton>
               </Link>

@@ -1,57 +1,186 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, CssBaseline } from "@material-ui/core";
-import products from "../product-data";
+import { Grid, CssBaseline, Typography } from "@material-ui/core";
 import Product from "../components/Product";
-import {getProduct} from "../firebase";
-import { useEffect } from "react";
+import {getProduct, getDataFiter} from "../firebase";
+import { useEffect, useState } from "react";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  heading: {
+    textAlign: "center",
+    paddingBottom: "3rem",
+    color: "rgb(0,0,0)"
+  },
+  headingTopograpy: {
+    background: "#F7921A",
+    color:"#fff",
+    display: "inline-block",
+    padding: ".5rem 3rem",
+    clipPath: "polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%)",
+    fontWeight: "bold",
+    fontSize: "xx-large",
+  }
 }));
 
 const Products = () => {
   const classes = useStyles();
-  const getProducts =async () => {
-    try {
-      const querySnapshot = await getProduct();
-      querySnapshot.forEach(product =>{
-        console.log(product.data());
-      })
-    //console.log(querySnapshot.docs);
-    }catch (e) {
-      console.error(e);
-    }
-    
-  }
+  const [catOne, setCatone] = useState([]);
+  const [catTwo, setCatTwo] = useState([]);
+  const [catThree, setCatThree] = useState([]);
+  const [catFour, setCatFour] = useState([]);
+  const [catFive, setCatFive] = useState([]);
+  const [catSix, setCatSix] = useState([]);
+  const [catSeven, setCatSeven] = useState([]);
+  const [catEight, setCatEight] = useState([]);
+  
+  useEffect(() => {
+      const getProducts =async () => {
+      try {
+        const querySnapshot = await getDataFiter(1);
+        setCatone(querySnapshot.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-   useEffect(() => {
+        const queryCatTwo = await getDataFiter(2);
+        setCatTwo(queryCatTwo.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
+        const queryCatThree = await getDataFiter(3);
+        setCatThree(queryCatThree.docs.map((doc)=>({...doc.data(), id: doc.id})));
+       
+        const queryCatFour = await getDataFiter(4);
+        setCatFour(queryCatFour.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
+        const queryCatFive = await getDataFiter(5);
+        setCatFive(queryCatFive.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
+        const queryCatSix = await getDataFiter(6);
+        setCatSix(queryCatSix.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
+        const queryCatSeven = await getDataFiter(7);
+        setCatSeven(queryCatSeven.docs.map((doc)=>({...doc.data(), id: doc.id})));
+
+        const queryCatEight = await getDataFiter(8);
+        setCatEight(queryCatEight.docs.map((doc)=>({...doc.data(), id: doc.id})));
+        
+      }catch (e) {
+        console.error(e);
+      }  
+  }
     getProducts()
   }, []) 
   
-
-  /* const data = db.collection("Products").get().then((querySnapshot) =>{
-    querySnapshot.forEach((product) =>{
-      console.log(product.data());
-    })
-  }) */
-
-  //console.log(db);
-
   return (
     <>
       <CssBaseline />
+      <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        lavamanos    
+      </Typography></Box>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          {products.map((product) => (
+          {catOne.map((product) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <Product key={product.id} product={product} />
             </Grid>
+            
           ))}
         </Grid>
       </div>
+
+      <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Sanitarios   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catTwo.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Lavaderos   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catThree.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Pisos   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catFour.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Taladros   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catFive.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Martillos  
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catSix.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Pinzas   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catSeven.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
+        Destornilladores   
+      </Typography></Box>
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {catEight.map((product) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Product key={product.id} product={product} />
+            </Grid>            
+          ))}
+        </Grid>
+      </div>
+
+      
+      
     </>
   );
 };
