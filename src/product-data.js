@@ -382,7 +382,7 @@ const products = [
     image:
       "https://homecenterco.scene7.com/is/image/SodimacCO/413853?fmt=jpg&fit=fit,1&wid=420&hei=420",
     description:
-    "uego De 6 Destornilladores Mango Pvc PRETUL. Apretar o aflojar tornillos o pijas en trabajos de carpintería, construcción, mecánica, electricidad, electrónica, cerrajería o reparaciones domésticas.",
+    "Juego De 6 Destornilladores Mango Pvc PRETUL. Apretar o aflojar tornillos o pijas en trabajos de carpintería, construcción, mecánica, electricidad, electrónica, cerrajería o reparaciones domésticas.",
   },
 ];
 

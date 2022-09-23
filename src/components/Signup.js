@@ -100,6 +100,7 @@ export default function SignUp() {
                 label='Last Name'
                 name='lastName'
                 autoComplete='lname'
+                
               />
             </Grid>
             <Grid item xs={12}>
