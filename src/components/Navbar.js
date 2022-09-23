@@ -59,8 +59,9 @@ const Navbar = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const history = useHistory();
 
+  console.log("userMail",user)
   const handleAuth = () => {
-    console.log("user",user)
+    
     if (user) {
       auth.signOut();
       dispatch({
@@ -107,7 +108,7 @@ const Navbar = () => {
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Hola {user ? user.email : "usuario"}
+              Bienvenido {user ? user.displayName: "usuario"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
