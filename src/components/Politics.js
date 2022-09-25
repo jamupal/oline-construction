@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
       clipPath: "polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%)",
       fontWeight: "bold",
       fontSize: "xx-large",
-      marginTop: "2rem",
+      marginTop: "1rem",
+    },
+    accordion: {
+        marginTop: "2rem",
+        marginBottom: "2rem",
     },
   }));
   
@@ -49,7 +53,7 @@ const Politics = () => {
                 </Typography></Box>
         <Box>
         <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -71,7 +75,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -115,7 +119,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -134,7 +138,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -153,7 +157,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -177,7 +181,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -199,7 +203,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -220,7 +224,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -240,7 +244,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -260,7 +264,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -282,7 +286,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -303,7 +307,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -327,7 +331,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -347,7 +351,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -374,7 +378,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -394,7 +398,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -413,7 +417,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -432,7 +436,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -451,7 +455,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -479,7 +483,7 @@ const Politics = () => {
     <Box>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -501,7 +505,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -523,7 +527,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -546,7 +550,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -563,7 +567,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -586,7 +590,7 @@ const Politics = () => {
     </div>
 
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -609,7 +613,7 @@ const Politics = () => {
       </Typography></Box>                   
     <Box>
     <div>
-      <Accordion>
+      <Accordion className={classes.accordion}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
