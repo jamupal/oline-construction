@@ -61,6 +61,9 @@ heading: {
     fontWeight: "bold",
     fontSize: "xx-large",
   },
+  ulClass: {
+    paddingLeft: "2rem",
+    },
 }));
 
 const Information = () => {
@@ -119,13 +122,12 @@ const classes = useStyles();
                 </Box>
                 <Box >
                     <Typography variant='p' width="Mac-content" color='textPrimary' component='p'>
-                        <ul>
+                        <ul className={classes.ulClass}>
                         <li>El plazo de entrega contará a partir de la recepción del pago de la orden.</li>
                         <li>Los tiempos de entrega varían en función de la zona de envió y las opciones de entrega seleccionadas.</li>
                         <li>No aplica para promesas de entrega Mismo día y Express.</li>
                         <li>No hay un monto de compra mínimo o máximo para el valor de los productos.</li>
-                        <li>Aplica de momento en el barrio que se mencionará enseguida:</li>
-                        <p>MEDELLIN: Manrique central.</p>
+                        <li>Aplica de momento en el barrio que se mencionará enseguida:<strong>MEDELLIN: Manrique central.</strong></li>
                     </ul>
                     </Typography>
                 </Box>
