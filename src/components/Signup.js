@@ -45,12 +45,17 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: 'rgb(247, 146, 26 )',
+    fontWeight: 'bold',
+    color: "#FFF",
   },
+
 }));
 
 export default function SignUp() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
+  const [displayName, setName] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
@@ -59,12 +64,17 @@ export default function SignUp() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log(auth);
-        if (auth) {
+        console.log( auth);
+        auth.user.updateProfile({displayName: displayName}).then(function() {
+      }, function(error) { 
+      });
+
+      if (auth) {
           history.push("/");
-        }
+        } 
       })
       .catch((err) => alert(err.message));
+      
   };
 
   return (
@@ -75,19 +85,20 @@ export default function SignUp() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component='h1' variant='h5'>
-          Sign up
+          Registrarse
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete='fname'
+                onChange={(e) => setName(e.target.value)}
                 name='firstName'
                 variant='outlined'
                 required
                 fullWidth
                 id='firstName'
-                label='First Name'
+                label='Nombre'
                 autoFocus
               />
             </Grid>
@@ -97,7 +108,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id='lastName'
-                label='Last Name'
+                label='Apellido'
                 name='lastName'
                 autoComplete='lname'
                 
@@ -111,7 +122,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id='email'
-                label='Email Address'
+                label='correo electronico'
                 name='email'
                 autoComplete='email'
               />
@@ -124,7 +135,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name='password'
-                label='Password'
+                label='Contraseña'
                 type='password'
                 id='password'
                 autoComplete='current-password'
@@ -133,7 +144,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value='allowExtraEmails' color='primary' />}
-                label='I want to receive inspiration, marketing promotions and updates via email.'
+                label='Quiero recibir inspiración, promociones de marketing y actualizaciones por correo electrónico.'
               />
             </Grid>
           </Grid>
@@ -145,19 +156,18 @@ export default function SignUp() {
             className={classes.submit}
             onClick={signup}
           >
-            Sign Up
+            Registrarse
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <RouteLink to='/signin'>
-                Already have an account? Sign in
+                Ya tienes una cuenta? Inicia sesión
               </RouteLink>
             </Grid>
           </Grid>
         </form>
       </div>
       <Box mt={5}>
-        <Copyright />
       </Box>
     </Container>
   );

@@ -1,5 +1,5 @@
 import firebase from "firebase/compat/app";
-import {collection, doc, getDocs, getFirestore } from "firebase/firestore";
+import {collection, doc, query, where, getDocs, getFirestore } from "firebase/firestore";
 import 'firebase/compat/auth'
 
 const firebaseConfig = {
@@ -16,7 +16,12 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const db = getFirestore();
+const colletionRef = collection(db, "Products");
+const q = (param) => {return query(colletionRef, where("category", "==", param))};
 
 export {auth};
 
-export const getProduct = () => getDocs(collection(db, 'Products'));
+export const getProduct = () => getDocs(colletionRef);
+
+export const getDataFiter = (param) => getDocs(q(param));
+

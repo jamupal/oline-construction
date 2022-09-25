@@ -11,8 +11,8 @@ const Confirmation = ({ message }) => {
         <Divider />
         <br />
         <Typography variant='subtitle2' gutterBottom>
-          {message === "Successful Payment"
-            ? "Su referencia de reserva : Rgh8787878lkj"
+          {message === "Pago Exitoso"
+            ? "Se ha enviado la factura a su correo electrónico."
             : ""}
         </Typography>
       </div>
