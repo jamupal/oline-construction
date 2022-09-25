@@ -6,7 +6,6 @@ import Link from "@material-ui/core/Link";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { makeStyles } from "@material-ui/core/styles";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const useStyles = makeStyles((theme) => ({
   boxPadding: {

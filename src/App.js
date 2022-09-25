@@ -14,8 +14,7 @@ import Products from "./Pages/Products";
 import Home from "./components/Home";
 import Information from "./components/Information";
 import CheckoutPage from "./Pages/CheckoutPage";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
   import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 

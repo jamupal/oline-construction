@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import FacebookIcon from '@mui/icons-material/Facebook';
 import { makeStyles } from "@material-ui/core/styles";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Typography from "@material-ui/core/Typography";

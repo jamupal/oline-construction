@@ -75,7 +75,7 @@ const Products = () => {
     <>
       <CssBaseline />
       <Box className={classes.heading}><Typography className={classes.headingTopograpy} variant='h6' color='textPrimary' component='p'>
-        lavamanos    
+        Lavamanos    
       </Typography></Box>
       <div className={classes.root}>
         <Grid container spacing={3}>

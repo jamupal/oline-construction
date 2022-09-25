@@ -76,7 +76,7 @@ const CheckoutForm = ({ backStep, nextStep }) => {
           type: actionTypes.SET_PAYMENT_MESSAGE,
           paymentMessage: data.message,
         });
-        if (data.message === "Successful Payment") {
+        if (data.message === "Pago Exitoso") {
           dispatch({
             type: actionTypes.EMPTY_BASKET,
             basket: [],
