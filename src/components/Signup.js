@@ -59,19 +59,20 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const history = useHistory();
 
-  const signup = (e) => {
+  const signup =async (e) => {
     e.preventDefault();
-    auth
+   await auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         console.log( auth);
-        auth.user.updateProfile({displayName: displayName}).then(function() {
+        auth.user.updateProfile({displayName: displayName}).then((user) => {
+          if (user) {
+          history.push("/");
+        } 
       }, function(error) { 
       });
 
-      if (auth) {
-          history.push("/");
-        } 
+      
       })
       .catch((err) => alert(err.message));
       
