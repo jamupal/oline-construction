@@ -15,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
   button: {
     maxWidth: "200px",
     marginTop: "2rem",
+    backgroundColor: "#F7921A",
+    color: "#FFF",
   },
 }));
 
@@ -24,14 +26,13 @@ const Total = () => {
 
   return (
     <div className={classes.root}>
-      <h5>Total items : {basket?.length}</h5>
+      <h5>Total productos : {basket?.length}</h5>
       <h5>{accounting.formatMoney(getBasketTotal(basket), "$")}</h5>
       <Button
         component={Link}
         to='/checkout'
         className={classes.button}
         variant='contained'
-        color='secondary'
       >
         Verificar
       </Button>
