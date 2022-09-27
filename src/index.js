@@ -5,12 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer.js";
+import { FormattedMessage } from "react-intl"
+import {AppContextProvider} from "./components/Context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
-      <App />
-    </StateProvider>
+  <AppContextProvider>
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <App />
+      </StateProvider>
+    </AppContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

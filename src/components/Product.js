@@ -2,7 +2,6 @@ import { useState } from "react";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
@@ -14,17 +13,19 @@ import { AddShoppingCart } from "@material-ui/icons";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 import accounting from "accounting";
+import { ImageViewer } from "react-image-viewer-dv"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 360,
   },
   action: {
     marginTop: "1rem",
   },
   media: {
-    height: 0,
-    paddingTop: "56.25%", // 16:9
+    height: "20rem",
+    paddingTop: "0", // 16:9
+    width: "100%",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -78,7 +79,12 @@ export default function Product({
         title={name}
         subheader='Disponible'
       />
-      <CardMedia className={classes.media} image={image} title={name} />
+      
+          
+          <ImageViewer>
+            <img className={classes.media} src={image} title={name}  alt={name}  />
+          </ImageViewer>
+        
       <CardContent>
         <Typography variant='body2' color='textSecondary' component='p'>
           {productType}

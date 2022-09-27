@@ -40,28 +40,29 @@ const Products = () => {
   useEffect(() => {
       const getProducts =async () => {
       try {
-        const querySnapshot = await getDataFiter(1);
+        const querySnapshot = await getDataFiter(1, 'Products');
+        
         setCatone(querySnapshot.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatTwo = await getDataFiter(2);
+        const queryCatTwo = await getDataFiter(2, 'Products');
         setCatTwo(queryCatTwo.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatThree = await getDataFiter(3);
+        const queryCatThree = await getDataFiter(3, 'Products');
         setCatThree(queryCatThree.docs.map((doc)=>({...doc.data(), id: doc.id})));
        
-        const queryCatFour = await getDataFiter(4);
+        const queryCatFour = await getDataFiter(4, 'Products');
         setCatFour(queryCatFour.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatFive = await getDataFiter(5);
+        const queryCatFive = await getDataFiter(5, 'Products');
         setCatFive(queryCatFive.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatSix = await getDataFiter(6);
+        const queryCatSix = await getDataFiter(6, 'Products');
         setCatSix(queryCatSix.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatSeven = await getDataFiter(7);
+        const queryCatSeven = await getDataFiter(7, 'Products');
         setCatSeven(queryCatSeven.docs.map((doc)=>({...doc.data(), id: doc.id})));
 
-        const queryCatEight = await getDataFiter(8);
+        const queryCatEight = await getDataFiter(8, 'Products');
         setCatEight(queryCatEight.docs.map((doc)=>({...doc.data(), id: doc.id})));
         
       }catch (e) {

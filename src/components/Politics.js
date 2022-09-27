@@ -6,6 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import translate from "../assets/i18n/traslate";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,15 +63,15 @@ const Politics = () => {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography><h4>Introducción</h4></Typography>
+          <Typography><h4>{translate('politics.tittle')}</h4></Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
           <ul className={classes.ulClass}>
-                    <li>Estos Términos de uso estándar del sitio web escritos en esta página web administrarán su uso de este sitio web.</li>
-                    <li>Estos Términos se aplicarán completamente y afectarán su uso de este sitio web.</li>
-                    <li>Al usar este sitio web, acordó aceptar todos los Términos de uso escritos aquí.</li>
-                    <li>No debe usar este sitio web si no está de acuerdo con alguno de estos Términos de uso estándar del sitio web.</li>
+                    <li>{translate('politics.item1')}</li>
+                    <li>{translate('politics.item2')}</li>
+                    <li>{translate('politics.item3')}</li>
+                    <li>{translate('politics.item4')}</li>
                 </ul>
           </Typography>
         </AccordionDetails>

@@ -13,7 +13,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link as RouteLink, useHistory } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth, createInfo } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function Copyright() {
   return (
@@ -55,27 +56,20 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
   const [email, setEmail] = useState("");
-  const [displayName, setName] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setlastName] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
+  const params = {name:name, lastName: lastName, email:email, rol:'CLIENT'}
+
   const signup =async (e) => {
     e.preventDefault();
-   await auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        console.log( auth);
-        auth.user.updateProfile({displayName: displayName}).then((user) => {
-          if (user) {
-          history.push("/");
-        } 
-      }, function(error) { 
-      });
-
-      
-      })
-      .catch((err) => alert(err.message));
-      
+    const userInfo = await createUserWithEmailAndPassword(auth, email, password).then((user) => {      
+        return user;   
+    }).catch((err) => alert(err.message)); 
+      await createInfo(params, `users/${userInfo.user.uid}`);
+      history.push("/");
   };
 
   return (
@@ -105,6 +99,7 @@ export default function SignUp() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) => setlastName(e.target.value)}
                 variant='outlined'
                 required
                 fullWidth

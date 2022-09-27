@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
-import {collection, doc, query, where, getDocs, getFirestore } from "firebase/firestore";
-import 'firebase/compat/auth'
+import {collection, doc, query, where, deleteDoc, getDocs, getFirestore, setDoc, getDoc, updateDoc } from "firebase/firestore";
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTLkp0RzgDEAMo6Fe0GzLrXgkKkKvs9KM",
@@ -14,14 +14,23 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth();
+const auth = getAuth(firebaseApp);
 const db = getFirestore();
-const colletionRef = collection(db, "Products");
-const q = (param) => {return query(colletionRef, where("category", "==", param))};
+const colletionRef = (table) => collection(db, table);
+const docRef = (table) => doc(db, table);
+const q = (param, table) => {return query(colletionRef(table), where("category", "==", param))};
 
 export {auth};
 
-export const getProduct = () => getDocs(colletionRef);
+export const getProduct = (table) => getDocs(colletionRef(table));
 
-export const getDataFiter = (param) => getDocs(q(param));
+export const getDataFiter = (param, table) => getDocs(q( param, table));
+
+export const createInfo = (params, table) => setDoc(docRef(table), params);
+
+export const getRol = (table) => getDoc(docRef(table));
+
+export const updatetes = (params,table) => updateDoc(docRef(table), params);
+
+export const deleteDocument = (table) => deleteDoc(docRef(table)); 
 

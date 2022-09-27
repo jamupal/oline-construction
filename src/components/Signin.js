@@ -14,19 +14,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link as RouteLink, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
-function Copyright() {
-  return (
-    <Typography variant='body2' color='textSecondary' align='center'>
-      {"Copyright © "}
-      <Link color='inherit' href='https://material-ui.com/'>
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -56,11 +46,10 @@ export default function SignIn() {
   const [password, setPassword] = useState("");
   const history = useHistory();
   const classes = useStyles();
-
+  
   const signin = (e) => {
     e.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
+      signInWithEmailAndPassword(auth, email, password)
       .then((auth) => history.push("/"))
       .catch((err) => alert(err.message));
   };

@@ -6,30 +6,49 @@ import Politics from "./components/Politics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignIn from "./components/Signin";
 import SignUp from "./components/Signup";
-import { auth } from "./firebase";
+import { onAuthStateChanged } from 'firebase/auth'
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
 import Checkout from "./components/ProcessOrder/Checkout";
 import Products from "./Pages/Products";
 import Home from "./components/Home";
+import Manage from "./components/manage/Manage";
 import Information from "./components/Information";
 import CheckoutPage from "./Pages/CheckoutPage";
-
-  import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
-
-
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { auth, getRol } from "./firebase";
+  
 function App() {
   const [{ user }, dispatch] = useStateValue();
 
+  const userRol = async (uid) => {
+    const getuser = await getRol(`users/${uid}`);
+    const rolUser = getuser.data()
+    const dataUser ={
+      rol: rolUser.rol,
+      fullName: `${rolUser.name} ${rolUser.lastName}`
+    }
+    return dataUser;
+  }
+
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
+    onAuthStateChanged(auth, (authUser) => {
       console.log(authUser);
       if (authUser) {
-        dispatch({
+        userRol(authUser.uid).then((dataUser) => {
+          console.log(dataUser)
+          const userData = {
+          uid : authUser.uid,
+          email: authUser.email,
+          rol: dataUser.rol,
+          fullName: dataUser.fullName,
+        }
+          dispatch({
           type: actionTypes.SET_USER,
-          user: authUser,
+          user: userData,
         });
+        })
+       
       } else {
         dispatch({
           type: actionTypes.SET_USER,
@@ -65,14 +84,17 @@ function App() {
            <Route path='/information'>
             <Information />
           </Route>
+           <Route path='/manage'>
+            <Manage />
+          </Route>
           <Route path='/'>
             <Home />
           </Route>
         </Switch>
         <Footer />
-        <di> <a href="http://api.whatsapp.com/send?phone=3052947688" class="btn-wsp" target="_blank">
+        <div> <a href="http://api.whatsapp.com/send?phone=3052947688" className="btn-wsp" target="_blank">
         <WhatsAppIcon color="default"/>
-    </a></di>
+    </a></div>
       </div>
     </Router>
   );

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
   },
   firtsElement: {
-    marginLeft: "15rem",
+    marginLeft: "5rem",
   },
   secondElement: {
     marginLeft: "5rem",
@@ -59,9 +59,7 @@ const Navbar = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const history = useHistory();
 
-  console.log("userMail",user)
   const handleAuth = () => {
-    
     if (user) {
       auth.signOut();
       dispatch({
@@ -71,6 +69,8 @@ const Navbar = () => {
       history.push("/");
     }
   };
+
+  console.log('pepa ', user);
 
   return (
     <>
@@ -105,10 +105,19 @@ const Navbar = () => {
               </Link>
             </Typography>
             </div>
+            {user && user.rol === "ADMIN" ?
+            <div className={classes.grow}>
+              <Typography variant='h6' color='textPrimary' component='p'>
+              <Link className={classes.colorLink} to="/manage"  color="inherit">
+                Panel administrativo
+              </Link>
+            </Typography>
+            </div>
+            : ""}
 
             <div className={classes.grow} />
             <Typography variant='h6' color='textPrimary' component='p'>
-              Bienvenido {user ? user.displayName: "usuario"}
+              Bienvenido {user ? user.fullName : "usuario"}
             </Typography>
             <div className={classes.button}>
               <Link to={!user && "/signin"}>
